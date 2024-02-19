@@ -7,7 +7,6 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function(theExcuse) {
   //write your code here
-
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
   let what = ["my homework", "the keys", "the car"];
@@ -19,19 +18,16 @@ window.onload = function(theExcuse) {
     "while I was praying"
   ];
 
-  let whoIndex = Math.floor(Math.random() * who.length);
-  let actionIndex = Math.floor(Math.random() * action.length);
-  let whatIndex = Math.floor(Math.random() * what.length);
-  let whenIndex = Math.floor(Math.random() * when.length);
-  let excuse =
-    who[whoIndex] +
-    " " +
-    action[actionIndex] +
-    " " +
-    what[whatIndex] +
-    " " +
-    when[whenIndex];
-  let excuse2 = `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
-  console.log(excuse);
-  console.log(excuse2);
+  document.getElementById("btn").addEventListener("click", function() {
+    let whoIndex = Math.floor(Math.random() * who.length);
+    let actionIndex = Math.floor(Math.random() * action.length);
+    let whatIndex = Math.floor(Math.random() * what.length);
+    let whenIndex = Math.floor(Math.random() * when.length);
+
+    let theDumbExcuse = `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
+    document.querySelector(".excusa").innerHTML = theDumbExcuse;
+    let parrafo = document.querySelector(".excusa");
+    parrafo.textContent = theDumbExcuse;
+    console.log(theDumbExcuse);
+  });
 };
